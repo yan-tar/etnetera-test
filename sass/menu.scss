@@ -1,0 +1,87 @@
+.page-header {
+	@include wrapper;
+	padding-top: 17px;
+	padding-bottom: 17px;
+	display: flex;
+	justify-content: space-between;
+	outline: 1px solid green;
+}
+
+.page-header__logo {
+	height: 50px;
+}
+
+.menu {
+	height: 50px;
+}
+.menu--opened{
+	position: relative;
+}
+.menu__list {
+	margin: 0; padding: 0;
+	list-style-type: none;
+	text-transform: uppercase;
+	text-align: center;
+
+	@include tablet-down {
+		display: none;
+		width: 300px;
+	}
+} 
+.menu--opened .menu__list {
+	@include tablet-down {
+		display: block;
+		position: absolute;
+		top: 40px; right: 0;
+		z-index:10;
+		background-color: #fff;
+	}
+}
+
+.menu__item {
+	margin: 10px 0 5px 25px;
+	float: left;
+	font-size: 18px;
+
+	@include desktop-down {
+		//font-size: 16px;
+	}
+
+	@include tablet-down {
+		float: none;
+	}	
+}
+
+.menu__link {
+	color: black;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+		color: $accent;
+		border-bottom: 1px solid $accent;
+	}
+}
+
+.menu__toggle {
+		display: none;
+	  width: 35px;
+    height: 8px;
+    position: relative;
+    border-top: 2px solid $tool;
+    border-bottom: 2px solid $tool;
+    cursor: pointer;
+
+    &::after{
+			content: '';
+	    position: absolute;
+	    top: 18px;
+	    left: 0;
+	    width: 35px;
+	    border-top: 2px solid $tool;
+    }
+
+    @include tablet-down{
+    	display: block;
+    }
+}

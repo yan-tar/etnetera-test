@@ -23,20 +23,24 @@
 }
 
 
-@mixin container {
-  min-width: 280px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: 20px;
-  padding-right: 20px;
+@mixin wrapper {
+  max-width: 1300px;
+  padding-left: 50px;
+  padding-right: 50px;
 
-  @media (#{$tablet}){
-    width: 620px;
+  @include desktop-down{
+    padding-left: 20px;
+    padding-right: 20px;
+    
+  }
+  @include mobile-down{
+    min-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
   }
 
-  @media (#{$desktop}){
-    width: 940px;
-  }
 }
 
 @mixin opensans($fv:300){
@@ -50,14 +54,49 @@
   font-size: 24px;
   line-height: 28px;
 
-  @media (#{$tablet}){
+  @include media($tablet){
     font-size: 40px;
     line-height: 50px;
     margin: 20px 0;
   }
 
-  @media (#{$desktop}){
+  @include media($desktop){
     font-size: 50px;
     line-height: 60px;
   }
+}
+
+@mixin media($width) {
+  @media (min-width: $width) {
+    @content;
+  }
+}
+
+
+@mixin media($point) {
+  @if $point == tv-only {
+    @media (min-width: 1201px) { @content; }
+  }
+  @else if $point == desktop {
+    @media (max-width: 1200px) { @content; }
+  }
+  @else if $point == tablet {
+    @media (max-width: 900px)  { @content; }
+  }
+  @else if $point == mobile {
+    @media (max-width: 600px)  { @content; }
+  }
+}
+
+@mixin tv-only {
+  @media (min-width: 1201px) { @content; }
+}
+@mixin desktop-down {
+  @media (max-width: 1200px) { @content; }
+}
+@mixin tablet-down {
+  @media (max-width: 900px) { @content; }
+}
+@mixin mobile-down {
+  @media (max-width: 600px) { @content; }
 }

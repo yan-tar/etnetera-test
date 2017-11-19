@@ -10,6 +10,7 @@ var sourcemaps = require("gulp-sourcemaps");
 var rename = require("gulp-rename");
 var mqpacker = require("css-mqpacker");
 var minify = require("gulp-csso");
+var imagemin = require("gulp-imagemin");
 var run = require("run-sequence");
 var del = require("del");
 
@@ -28,16 +29,16 @@ gulp.task("style", function() {
       })
     ]))
     .pipe(sourcemaps.write())
-//    .pipe(gulp.dest("build/css"))
-//    .pipe(minify())
-//    .pipe(rename("style.min.css"))
-//    .pipe(gulp.dest("build/css"))
+    .pipe(gulp.dest("build/css"))
+    // .pipe(minify())
+    // .pipe(rename("style.min.css"))
+    // .pipe(gulp.dest("build/css"))
     .pipe(server.stream());
 });
 
 gulp.task("html:copy", function() {
   return gulp.src("*.html")
- //   .pipe(gulp.dest("build"));
+    .pipe(gulp.dest("build"));
 });
 
 gulp.task("html:update", ["html:copy"], function(done) {
@@ -45,11 +46,14 @@ gulp.task("html:update", ["html:copy"], function(done) {
   done();
 });
 
+gulp.task("js", function() {
+  return gulp.src("js/*.js")
+    .pipe(gulp.dest("build/js"));
+});
 
 gulp.task("serve", function() {
   server.init({
-//    server: "build/",
-    server: true,
+    server: "build/",
     notify: false,
     open: true,
     cors: true,
@@ -58,10 +62,23 @@ gulp.task("serve", function() {
 
   gulp.watch("sass/**/*.{scss,sass}", ["style"]);
   gulp.watch("*.html", ["html:update"]);
-  gulp.watch("js/*.js", ["html:update"]);
-  //gulp.watch("p5.js/**/*.js", ["html:update"]);
 });
 
+
+gulp.task("images", function() {
+  return gulp.src("build/img/**/*.{png,jpg,gif}")
+    .pipe(imagemin([
+      imagemin.optipng({optimizationLevel: 3}),
+      imagemin.jpegtran({progressive: true})
+    ]))
+    .pipe(gulp.dest("build/img"));
+});
+
+gulp.task("minsvg", function(){
+  return gulp.src("build/img/*.svg")
+    .pipe(svgmin())
+    .pipe(gulp.dest("build/img"));
+});
 
 gulp.task("copy", function() {
   return gulp.src([
@@ -84,6 +101,7 @@ gulp.task("build", function(fn) {
     "clean",
     "copy",
     "style",
+    "images",
     fn
   );
 });

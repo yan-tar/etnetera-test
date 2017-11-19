@@ -1,0 +1,52 @@
+$color-high: #e64e21;
+$color-mid: #f88c6c;
+$color-low: #ffc59b;
+$tool: #464646;
+$accent: #e84e0e;
+$color: #000;
+
+
+
+/*сетка*/
+$mob-pad-side: 30px;
+$mob-only: "max-width: 699px";
+
+$tablet: 700px;
+$tab-pad-side: 50px;
+
+$desktop: 1200px;
+$desk-pad-side: 50px;
+
+$retina1: "min-resolution: 1.5dppx";
+$retina2: "min-resolution: 144dpi";
+
+@font-face {
+  font-weight: normal;
+  font-family: OpenSans;
+  font-style: normal;
+
+  src: url(../fonts/opensans.woff2) format("woff2");
+  src: url(../fonts/opensans.woff) format("woff");
+}
+
+@font-face {
+  font-weight: 300;
+  font-family: OpenSansLight;
+  font-style: normal;
+
+  src: url(../fonts/opensanslight.woff2)  format("woff2");
+  src: url(../fonts/opensanslight.woff)  format("woff");
+}
+
+@font-face {
+  font-weight: 700;
+  font-family: OpenSansBold;
+  font-style: normal;
+
+  src: url(../fonts/opensansbold.woff2)  format("woff2");
+  src: url(../fonts/opensansbold.woff)  format("woff");
+}
+
+$opensanslight: OpenSansLight, Arial, sans-serif;
+$opensans: OpenSans, Arial, sans-serif;
+$opensansbold: OpenSansBold, Arial, sans-serif;

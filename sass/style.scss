@@ -4,9 +4,9 @@
 @import "mixins.scss";
 @import "scaffolding.scss";
 
-@import "menu.scss";
-
-.slider {
-	padding: 1px 0 0; margin: 0;
-	background-color: #cacaca;
-}
+@import "blocks/page-header.scss";
+@import "blocks/menu.scss";
+@import "blocks/slider.scss";
+@import "blocks/news.scss";
+@import "blocks/page-content.scss";
+@import "blocks/page-footer.scss";

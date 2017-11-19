@@ -14,60 +14,65 @@ img {
   height: auto;
 }
 
+a {
+  color: $link;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px solid $link;
+  }
+
+  &:focus {
+    box-shadow: 0 2px 0 0;
+    outline: none;
+  }
+}
+
+abbr, abbr[title] {
+  text-decoration: none;
+  border-bottom: 1px dashed $link;
+  cursor: pointer;
+}
+
 .btn {
-  margin:12px auto;
-  width: 274px;
-  height: 55px;
-  border: 3px solid white;
+  display: inline-block;
+  width: 235px;
+  padding:7px 0;
+  border: 1px solid white;
   border-radius: 50px;
 
-  font-family:$opensansbold;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 55px;
-  text-align:center;
+  background-color: #fff;
+  text-align: center;
+  font-family:$opensans;
+  font-weight: 400;
+  font-size: 16px;
 
   cursor: pointer;
 
-  @media (#{$desktop}){
-    font-size: 21px;
-    line-height: 18px;
+  &--orange {
+    color: #e84d0f;
+    border-color: #e84d0f;
+    font-size: 16px;
+    &:hover {
+      background-color: #e84d0f;
+      color: #fff;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0;
+    }
   }
 
   &:hover {
-    background-color: #fff;
-    color: $accent;
+    font-weight: bold;
+    font-family: $opensansbold;
   }
   &:active {
     color: rgba($accent, 0.3);
   }
 }
 
-.btn2 {
-  width: 280px;
-  height: 63px;
-  background-color: #2aab6d;
-  border: 2px solid #2aab6d;
-  border-radius: 1px;
-  outline: none;
-
-  font-family: $opensansbold;
-  font-weight: 700;
-  font-size: 18px;
-  line-height: 30px;
-  color: #fff;
-  text-transform: uppercase;
-  text-align: center;
-  cursor: pointer;
-
-  &:hover {
-    background-color: #1c9b5e;
-    border-color: #1c9b5e;
-  }
-  &:active {
-    color: rgba(255, 255, 255, 0.3);
-  }
-}
 
 .visually-hidden{
   position: absolute;

@@ -25,68 +25,28 @@
 
 @mixin wrapper {
   max-width: 1300px;
-  padding-left: 50px;
-  padding-right: 50px;
+  padding-left: $tv-pad-outer;
+  padding-right: $tv-pad-outer;
 
   @include desktop-down {
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: $desktop-pad-outer;
+    padding-right: $desktop-pad-outer;
     
+  }
+  @include tablet-down {    
+    padding-left: $tablet-pad-outer;
+    padding-right: $tablet-pad-outer;
   }
   @include mobile-down {
     min-width: 280px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding-left: $mobile-pad-outer;
+    padding-right: $mobile-pad-outer;
   }
 
 }
 
-@mixin opensans($fv:300){
-  font-family: "Open Sans", Arial, serif;
-  font-weight: $fv;
-}
-
-@mixin h2 {
-  font-family: $opensanslight;
-  font-weight: 300;
-  font-size: 24px;
-  line-height: 28px;
-
-  @include media($tablet){
-    font-size: 40px;
-    line-height: 50px;
-    margin: 20px 0;
-  }
-
-  @include media($desktop){
-    font-size: 50px;
-    line-height: 60px;
-  }
-}
-
-@mixin media($width) {
-  @media (min-width: $width) {
-    @content;
-  }
-}
-
-
-@mixin media($point) {
-  @if $point == tv-only {
-    @media (min-width: 1201px) { @content; }
-  }
-  @else if $point == desktop {
-    @media (max-width: 1200px) { @content; }
-  }
-  @else if $point == tablet {
-    @media (max-width: 900px)  { @content; }
-  }
-  @else if $point == mobile {
-    @media (max-width: 600px)  { @content; }
-  }
-}
 
 @mixin tv-only {
   @media (min-width: 1201px) { @content; }
@@ -100,3 +60,14 @@
 @mixin mobile-down {
   @media (max-width: 600px) { @content; }
 }
+
+/*test purposes only*/
+@mixin outline {
+  outline: 1px solid red;
+}
+
+/*for mqpacker*/
+@media (min-width: 1201px) { }
+@media (max-width: 1200px) {  }
+@media (max-width: 900px) {  }
+@media (max-width: 600px) {  }

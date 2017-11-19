@@ -1,28 +1,10 @@
-.page-header {
-	@include wrapper;
-	padding-top: 17px;
-	padding-bottom: 17px;
-	display: flex;
-	justify-content: space-between;
-}
-
-.page-header__logo {
-	width: 150px;
-	height: 50px;
-}
-
-.page-header__logo img {
-	width: 150px;
-	height: 50px;
-}
-
 .menu {
 	position: relative;
 }
 
 .menu__list {
-	height: 50px;
-	margin: 0; padding: 0;
+	height: 47px;
+	margin: 3px 0 0; padding: 0;
 	list-style-type: none;
 
 	text-transform: uppercase;
@@ -36,8 +18,8 @@
 
 .menu__item {
 	display: inline-block;
-	margin-left: 15px;
-	padding: 0 5px;
+	margin-left: 13px;
+	padding-left: 5px;
 	height: 100%;
 	font-size: 18px;
 	vertical-align: middle;
@@ -107,7 +89,7 @@
 		position: absolute;
 		width: 300px; height: auto;
 		top: 40px; right: 0;
-		z-index:10;
+		z-index:11;
 
 		background-color: #fff;
 		border: 2px solid $tool;

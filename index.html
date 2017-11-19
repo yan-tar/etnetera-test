@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>Etnetera test</title>
   <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" type="text/css" href="css/slick.css"/>
 </head>
 <body>
 <header class="page-header">
@@ -26,24 +27,67 @@
 	</nav>
 </header>
 <section class="slider">
-	<div class="slider__item">
-		<h2 class="slider__header">Mobile development</h2>
-		<div class="slider__text">
-			<p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
-			<p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
+	<div class="slider__item  slider__item--active">
+		<div class="slider__flex">
+			<div class="slider__desc">
+				<h2 class="slider__header">Mobile development</h2>
+				<div class="slider__text">
+					<p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+					<p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
+				</div>
+			</div>
+			<div class="slider__btn-wrapper">
+				<a class="slider__btn btn  btn--orange" href="#">Více o mobile</a>
+			</div>
 		</div>
-		<div class="btn  btn--orange">Více o mobile</div>
+	</div>	
+	<div class="slider__item">
+		<div class="slider__flex">
+			<div class="slider__desc">
+				<h2 class="slider__header">Mobile development 2</h2>
+				<div class="slider__text">
+					<p>Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas.</p>
+					<p>Dramatically maintain clicks-and-mortar solutions without functional solutions.</p>
+				</div>
+			</div>
+			<div class="slider__btn-wrapper">
+				<a class="slider__btn btn  btn--orange" href="#">Více o mobile</a>
+			</div>
+		</div>
 	</div>
 </section>
 <section class="news">	
-	<p class="news__text"><span class="news__date">PŘED 12 DNY</span>Jiří Štěpán z Etnetera Activate poodhalil zákulisí vykutálené náborové kampaně.<a href="" class="news__link">Přečíst</a></p>
+	<time class="news__date" datetime="2017-11-08">PŘED 12 DNY</time><span class="news__text">Jiří Štěpán z Etnetera Activate poodhalil zákulisí vykutálené náborové kampaně.</span><a href="" class="news__link">Přečíst</a>
 </section>
-<section class="page-content">
-	<article class="article-top"></article>
-	<article class="article-columns"></article>
+<section class="content">
+	<article class="article article--top">
+		<h2 class="article__title">Fronty u kávovaru</h2>
+		<div class="article__content">
+			<img src="img/coffee-cup.png" width="330" height="221" alt="Arabica latte shop" class="article__img  article__img--left">
+			<p>Arabica latte shop macchiato doppio coffee steamed. Brewed, macchiato grounds medium, eu breve grinder frappuccino americano. Pumpkin spice, caffeine chicory dark medium arabica macchiato instant rich. Et, single shot aged half and half lungo whipped, cinnamon cappuccino whipped id mazagran.</p>
+			<p><strong>Con panna</strong> sugar macchiato so macchiato in skinny variety mug that. A plunger pot acerbic, brewed medium java aromatic coffee. At mocha wings acerbic beans medium saucer. Cup extra sit half and half robust java crema turkish.</p>
+			<p>Medium aroma cream qui medium coffee arabica, caffeine et <a href="#">caramelization cup</a> plunger pot. Eu, plunger pot organic dark, cinnamon, redeye wings fair trade whipped lungo crema. Carajillo caramelization americano, plunger pot, filter coffee foam siphon roast and java.</p>
+			<p>Galão a, breve, at white, latte variety irish at flavour barista. Half and half, so, sweet, <abbr title="espresso!">affogato galão</abbr>, half and half sugar irish trifecta chicory. Single origin, espresso, con panna french press et steamed robust.</p>
+		</div><!--/article__content-->
+	</article>
+	<article class="article  article--secondary">
+		<h2 class="article__title">Více o kávě</h2>
+		<div class="article__content  article__content--column-2">
+			<p>Shop robust café au lait, cortado that, kopi-luwak skinny sweet crema fair <strong>trade aged</strong>, cultivar medium decaffeinated medium siphon crema cappuccino macchiato froth roast cinnamon aroma crema. Con panna americano skinny blue mountain decaffeinated, trifecta barista sugar, in saucer in filter that. Roast sit, robusta aged spoon, filter beans blue mountain milk crema dark eu <a href="#">affogato barista</a> caffeine grinder, aromatic instant cup as robusta steamed doppio. Aftertaste, kopi-luwak, cappuccino siphon beans galão decaffeinated mug, froth half and <strong>half eu java</strong> roast, lungo, id fair trade organic doppio filter instant carajillo.
+
+		<p>Id siphon and, java, cappuccino milk cortado, siphon macchiato galão a irish flavour. Carajillo irish percolator steamed, medium galão latte, mocha est, medium, iced cappuccino americano, caramelization ristretto, in latte, flavour cup roast trifecta aged. Variety single origin steamed, at, galão bar turkish con panna cream aroma variety carajillo doppio cinnamon. Iced, single shot, est cup shop viennese dark crema macchiato wings single shot plunger pot foam aftertaste so to go white at acerbic a aftertaste.</p>
+		<p>Irish carajillo decaffeinated instant, pumpkin spice as, cup, dripper strong breve, est white crema viennese latte. Irish cup medium body organic, white americano galão plunger pot coffee, robust, carajillo, steamed, cream, java, cinnamon mazagran so caffeine latte flavour. <strong>Shop, turkish iced</strong> qui that steamed sweet, mazagran, macchiato est robusta spoon as, rich eu crema, chicory foam single shot organic sugar galão seasonal trifecta. Viennese half and half organic aged <a href="#">extraction cup</a>, espresso irish latte mug grinder turkish variety.</p>
+		</div>
+	</article>
 </section>
-<footer class="page-footer"></footer>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<footer class="page-footer">
+<div class="page-footer__copy-title">Copyright</div>
+<div class="page-footer__copy-text">&copy; 2015 Etnetera</div>
+
+<div class="page-footer__company	">Jsme hrdým členem <a href="#">Etnetera Group</a></div></footer>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="js/slick.min.js"></script>
 <script src="js/script.js"></script>
 </body>
 </html>

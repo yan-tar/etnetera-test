@@ -5,6 +5,8 @@ $tool: #464646;
 $accent: #e84e0e;
 $color: #000;
 $link: #e84d0f;
+/* var for td width for percentage chart */
+$chart-load: 100px;
 
 
 /*grids*/
@@ -27,7 +29,10 @@ $retina1: "min-resolution: 1.5dppx";
 $retina2: "min-resolution: 144dpi";
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i&subset=latin-ext');
+/* Dosis  as a free alternative for Chevin Pro font*/
+@import url('https://fonts.googleapis.com/css?family=Dosis:400,500&subset=latin-ext');
 
 $opensanslight: "Open Sans Light", Arial, sans-serif;
 $opensans: "Open Sans", Arial, sans-serif;
 $opensansbold: "Open Sans Bold", Arial, sans-serif;
+$chevinpro: "Chevin Pro", "Dosis", Arial, sans-serif;

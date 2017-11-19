@@ -22,8 +22,8 @@
 		padding-right: $desktop-pad-inner;
 	}
 	@include tablet-down() {
-		padding-left: $tablet-pad-inner;
-		padding-right: $tablet-pad-inner;
+		padding-left: 0;
+		padding-right: 0;
 	}
 	@include mobile-down() {
 		padding-left: 0;

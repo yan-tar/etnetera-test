@@ -28,17 +28,17 @@
   padding-left: 50px;
   padding-right: 50px;
 
-  @include desktop-down{
+  @include desktop-down {
     padding-left: 20px;
     padding-right: 20px;
     
   }
-  @include mobile-down{
+  @include mobile-down {
     min-width: 280px;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
   }
 
 }

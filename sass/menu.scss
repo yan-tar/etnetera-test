@@ -4,51 +4,61 @@
 	padding-bottom: 17px;
 	display: flex;
 	justify-content: space-between;
-	outline: 1px solid green;
 }
 
 .page-header__logo {
+	width: 150px;
+	height: 50px;
+}
+
+.page-header__logo img {
+	width: 150px;
 	height: 50px;
 }
 
 .menu {
-	height: 50px;
-}
-.menu--opened{
 	position: relative;
 }
+
 .menu__list {
+	height: 50px;
 	margin: 0; padding: 0;
 	list-style-type: none;
+
 	text-transform: uppercase;
-	text-align: center;
+	text-align: right;
+	font-size: 0;
 
 	@include tablet-down {
 		display: none;
-		width: 300px;
 	}
 } 
-.menu--opened .menu__list {
-	@include tablet-down {
-		display: block;
-		position: absolute;
-		top: 40px; right: 0;
-		z-index:10;
-		background-color: #fff;
-	}
-}
 
 .menu__item {
-	margin: 10px 0 5px 25px;
-	float: left;
+	display: inline-block;
+	margin-left: 15px;
+	padding: 0 5px;
+	height: 100%;
 	font-size: 18px;
+	vertical-align: middle;
+	text-align: center;
+
+	&:before {
+	  content: "";
+	  display: inline-block;
+	  vertical-align: middle;
+	  height: 100%;
+	}
 
 	@include desktop-down {
-		//font-size: 16px;
+		font-size: 16px;
 	}
 
 	@include tablet-down {
-		float: none;
+		display: block;
+		font-size: 18px;
+		margin-left: 0;
+		padding: 10px;
 	}	
 }
 
@@ -65,23 +75,54 @@
 
 .menu__toggle {
 		display: none;
+    position: absolute;    
+    right: 0; top: 10px;		
+    height: 22px;
+    cursor: pointer;
+
+    @include tablet-down {
+    	display: block;
+    }
+}
+
+.menu__toggle-inner {	
 	  width: 35px;
     height: 8px;
-    position: relative;
     border-top: 2px solid $tool;
     border-bottom: 2px solid $tool;
-    cursor: pointer;
 
     &::after{
 			content: '';
 	    position: absolute;
-	    top: 18px;
+	    top: 20px;
 	    left: 0;
 	    width: 35px;
 	    border-top: 2px solid $tool;
     }
+}
 
-    @include tablet-down{
-    	display: block;
-    }
+.menu--opened .menu__list {
+	@include tablet-down {
+		display: block;
+		position: absolute;
+		width: 300px; height: auto;
+		top: 40px; right: 0;
+		z-index:10;
+
+		background-color: #fff;
+		border: 2px solid $tool;
+		border-radius: 20px;
+	}
+}
+
+.menu--opened .menu__toggle {
+	top: 20px;
+}
+.menu--opened .menu__toggle-inner {
+	border-bottom: none;
+	transform: rotate(45deg);
+	&::after {
+		top: -2px;
+		transform: rotate(-90deg);
+	}
 }

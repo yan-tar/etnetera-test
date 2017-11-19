@@ -20,13 +20,15 @@ $desk-pad-side: 50px;
 $retina1: "min-resolution: 1.5dppx";
 $retina2: "min-resolution: 144dpi";
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i&subset=latin-ext');
+
 @font-face {
   font-weight: normal;
   font-family: OpenSans;
   font-style: normal;
 
-  src: url(../fonts/opensans.woff2) format("woff2");
-  src: url(../fonts/opensans.woff) format("woff");
+  // src: url(../fonts/opensans.woff2) format("woff2");
+  // src: url(../fonts/opensans.woff) format("woff");
 }
 
 @font-face {
@@ -34,8 +36,8 @@ $retina2: "min-resolution: 144dpi";
   font-family: OpenSansLight;
   font-style: normal;
 
-  src: url(../fonts/opensanslight.woff2)  format("woff2");
-  src: url(../fonts/opensanslight.woff)  format("woff");
+  // src: url(../fonts/opensanslight.woff2)  format("woff2");
+  // src: url(../fonts/opensanslight.woff)  format("woff");
 }
 
 @font-face {
@@ -43,8 +45,8 @@ $retina2: "min-resolution: 144dpi";
   font-family: OpenSansBold;
   font-style: normal;
 
-  src: url(../fonts/opensansbold.woff2)  format("woff2");
-  src: url(../fonts/opensansbold.woff)  format("woff");
+  // src: url(../fonts/opensansbold.woff2)  format("woff2");
+  // src: url(../fonts/opensansbold.woff)  format("woff");
 }
 
 $opensanslight: OpenSansLight, Arial, sans-serif;

@@ -118,6 +118,7 @@
 	}
 
 	@include mobile-down() {
+		background: url(../img/arrow-left-sm.png) no-repeat;
 		left: 18px
 	}
 }
@@ -133,6 +134,7 @@
 	}
 
 	@include mobile-down() {
+		background: url(../img/arrow-right-sm.png) no-repeat;
 		right: 18px
 	}
 }

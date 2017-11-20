@@ -29,10 +29,49 @@ a {
   }
 }
 
-abbr, abbr[title] {
+abbr[data-title] {
   text-decoration: none;
   border-bottom: 1px dashed $link;
   cursor: pointer;
+  position: relative;
+
+  &::after, &::before {
+    opacity: 0;
+      transition: opacity 0.9s;  
+  }
+
+  &:hover {
+    &::after{
+      content: attr(data-title);
+
+      position: absolute;
+      display: block;
+      top: -28px; left: 50%;
+      transform: translateX(-40px);
+      padding: 5px 15px;
+      border-radius: 5px;
+
+      background: $tool;
+      color: #fff;
+      font-size: 14px;  line-height: 14px;
+
+      opacity: 1;   
+    }
+
+    &::before {
+      content: '';
+      
+      position: absolute;
+      width: 0; height: 0;
+      left: 50%; top: -5px;
+
+      border: 5px solid;
+      border-color: $tool transparent transparent transparent;
+      
+      opacity: 1;
+      transition: opacity 0.9s; 
+    }
+  }
 }
 
 .btn {

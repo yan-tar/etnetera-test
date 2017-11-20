@@ -30,5 +30,11 @@
 }
 
 .news__link {
+	height: 20px;
 	color: $link;
+	@include mobile-down() {
+		box-sizing: border-box;
+		height: 20px;
+		margin: 0 auto;
+	}
 }

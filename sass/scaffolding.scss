@@ -35,18 +35,12 @@ abbr[data-title] {
   cursor: pointer;
   position: relative;
 
-  &::after, &::before {
-    opacity: 0;
-      transition: opacity 0.9s;  
-  }
-
-  &:hover {
     &::after{
+      opacity: 0;
       content: attr(data-title);
-
       position: absolute;
       display: block;
-      top: -28px; left: 50%;
+      top: -23px; left: 50%;
       transform: translateX(-40px);
       padding: 5px 15px;
       border-radius: 5px;
@@ -54,24 +48,25 @@ abbr[data-title] {
       background: $tool;
       color: #fff;
       font-size: 14px;  line-height: 14px;
-
-      opacity: 1;   
+      transition: opacity 0.5s; 
     }
 
     &::before {
-      content: '';
-      
+      opacity: 0;
+      content: '';      
       position: absolute;
       width: 0; height: 0;
-      left: 50%; top: -5px;
+      left: 50%; top: 0;
 
       border: 5px solid;
       border-color: $tool transparent transparent transparent;
-      
-      opacity: 1;
-      transition: opacity 0.9s; 
+
+      transition: opacity 0.5s; 
     }
-  }
+
+    &:hover::before, &:hover::after {
+      opacity: 1;
+    }
 }
 
 .btn {
@@ -108,7 +103,8 @@ abbr[data-title] {
     font-family: $opensansbold;
   }
   &:active {
-    color: rgba($accent, 0.3);
+    font-weight: bold;
+    opacity: 0.7;
   }
 }
 

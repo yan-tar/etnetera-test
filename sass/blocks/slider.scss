@@ -103,6 +103,11 @@
 	&:focus {
 		outline-color: $link;
 	}
+
+	@include mobile-down() {
+		top: 207px;
+		width: 15px; height: 27px;
+	}
 }
 
 .slick-prev {

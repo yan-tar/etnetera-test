@@ -69,8 +69,8 @@
 
 .menu__toggle-inner {	
 	  width: 35px;
-    height: 8px;
-    border-top: 2px solid $tool;
+    height: 10px;
+    margin-bottom: 10px;
     border-bottom: 2px solid $tool;
 
     &::after{
@@ -80,10 +80,20 @@
 	    left: 0;
 	    width: 35px;
 	    border-top: 2px solid $tool;
+	    transition: transform 0.5s;
+    }
+    &::before{
+			content: '';
+	    position: absolute;
+	    top: 0px;
+	    left: 0;
+	    width: 35px;
+	    border-top: 2px solid $tool;
+	    transition: transform 0.5s;
     }
 }
 
-.menu--opened .menu__list {
+.menu--opened .menu__list, .menu--nojs .menu__list {
 	@include tablet-down {
 		display: block;
 		position: absolute;
@@ -97,14 +107,20 @@
 	}
 }
 
-.menu--opened .menu__toggle {
+.menu--opened .menu__toggle, .menu--nojs .menu__toggle {
 	top: 20px;
 }
-.menu--opened .menu__toggle-inner {
-	border-bottom: none;
-	transform: rotate(45deg);
+.menu--opened .menu__toggle-inner, .menu--nojs .menu__toggle-inner {
+	border: none;
+	height: 26px;
+	margin-top: -20px;
+	//transform: rotate(45deg);
 	&::after {
 		top: -2px;
-		transform: rotate(-90deg);
+		transform: rotate(-45deg);
+	}
+	&::before {
+		top: -2px;
+		transform: rotate(45deg);
 	}
 }

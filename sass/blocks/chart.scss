@@ -106,6 +106,7 @@
 	padding: 0;
 	margin: 0;
 	width: $chart-load;
+
 }
 
 tr:nth-of-type(even) .chart__time span {
@@ -121,6 +122,11 @@ tr:nth-of-type(even) .chart__time span {
 	display: inline-block;
 	height: 17px;
 	font-size: 0;
+	//transition: opacity 0.3s;
+
+	&:hover {
+		opacity: 0.5;
+	}
 }
 
 .chart__tbl--rounded .chart__percent {
@@ -149,7 +155,6 @@ tr:nth-of-type(even) .chart__time span {
 	vertical-align: middle;
 	@include mobile-down() {
 		float: left;
-		margin-top: 60px;
 		margin-left: 20px;
 	}
 }

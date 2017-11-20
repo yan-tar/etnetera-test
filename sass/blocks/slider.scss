@@ -1,0 +1,145 @@
+.slider {
+	height: 454px;
+	padding: 0; margin: 0;
+	width: 100%;
+	position: relative;
+
+	@include mobile-down() {
+		height: auto;
+	}
+}
+
+.slider__item {
+	padding: 60px ($tv-pad-outer+$tv-pad-inner);
+	background: #f6f6f6 url(../img/slider-1.png) no-repeat 0 0;
+
+	@include desktop-down() {
+		padding: 60px ($desktop-pad-outer+$desktop-pad-inner);
+		background-position: 50% 50%;
+		background-size: cover;
+	}
+
+	@include tablet-down() {
+		padding: 30px ($tablet-pad-outer+$tablet-pad-inner);
+	}
+
+	@include mobile-down() {
+		padding: 10px ($mobile-pad-outer+$mobile-pad-inner);
+	}
+
+}
+
+.slider__flex {
+	display: flex;
+	@include tablet-down() {
+		flex-direction: column;
+	}
+}
+
+.slider__desc {
+	max-width: 650px;
+	min-height: 334px;
+	font-family: $opensanslight;
+}
+
+.slider__header {
+	text-shadow: 1px 2px 3px rgba(0, 0, 0, 0.75);
+	color: $color;
+	font-size: 48px;
+	line-height: 48px;
+	margin-top: 28px;
+	margin-bottom: 33px;
+
+	@include mobile-down() {
+		font-size: 36px;
+		line-height: 36px;
+	}
+}
+
+.slider__text {
+	color: #262626;
+	font-size: 20px;
+	line-height: 24px;
+
+	@include desktop-down() {
+		font-size: 18px;
+		line-height: 22px;
+	}
+}
+
+.slider__text p {
+	margin: 20px 0 25px;
+
+	@include desktop-down() {
+		margin: 18px 0 22px;
+	}
+}
+
+.slider__btn-wrapper {
+	margin-top: auto;
+	margin-left: auto;
+	align-self: flex-end;	
+	text-align: right;
+
+	@include tablet-down() {
+		margin: 0;
+		text-align: center;
+		align-self: center;
+	}
+}
+
+.slider__btn {
+	margin: 5px;
+}
+
+.slick-arrow {
+	position: absolute;
+	top: 200px; 
+	width: 30px; height: 54px; 
+	border: none;
+	z-index: 10;
+	font-size: 0;	
+
+	&:focus {
+		outline-color: $link;
+	}
+
+	@include mobile-down() {
+		top: 207px;
+		width: 15px; height: 27px;
+	}
+}
+
+.slick-prev {
+	left: 88px;
+	background: url(../img/arrow-left.png) no-repeat;
+
+	@include desktop-down() {
+		left: 58px
+	}
+
+	@include tablet-down() {
+		left: 38px
+	}
+
+	@include mobile-down() {
+		background: url(../img/arrow-left-sm.png) no-repeat;
+		left: 18px
+	}
+}
+
+.slick-next {
+	right: 88px;
+	background: url(../img/arrow-right.png) no-repeat;
+	@include desktop-down() {
+		right: 58px
+	}
+	@include tablet-down() {
+		right: 38px
+	}
+
+	@include mobile-down() {
+		background: url(../img/arrow-right-sm.png) no-repeat;
+		right: 18px
+	}
+}

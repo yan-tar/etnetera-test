@@ -1,0 +1,207 @@
+.chart {
+	width: 580px;
+	margin-left: auto;
+	margin-right: auto;
+	@include mobile-down() {
+		width: auto;
+		@include clearfix();
+	}
+}
+
+.chart__caption {
+	margin-left: 56px;
+	color: $color;
+	font-family: $chevinpro;
+	font-size: 21px;
+
+	@include mobile-down() {
+		margin-left: 50px;
+	}
+}
+
+.chart__tbl {
+	border: 0;
+	border-collapse: collapse;
+	border-spacing: 0;
+	line-height: 5px; font-size: 0; 
+
+	transform: rotate(-90deg) translateY(-140px);
+	transform-origin: top right;
+  overflow: hidden;
+  /*
+  margin bottom must be aproximately equal table height- table width
+  (table height = td-height(17px) * tr(29) + th-height(66) = aprx 560
+  table width = $chart-load + first td (about 40px)) = aprx 140
+  */
+  margin-bottom: -380px;
+
+  @include mobile-down() {
+		transform: rotate(0)  translateY(0);
+  	margin-bottom: 20px;
+  	float: left;
+  }
+
+}
+.chart__tbl tr {
+	padding: 0;
+	margin: 0;
+	border: 0; 
+	height: 17px;
+}
+
+.chart__tbl td {
+	border: 0;
+}
+.chart__tbl thead {
+	margin: 0; padding: 0;
+}
+
+.chart__tbl th { padding-bottom: 15px;}
+
+.chart__time-cap {
+	display: block;
+	height: 19px; width: 19px;
+	background: url(../img/clock.png) no-repeat 0 0;
+
+	transform: rotate(90deg) translateX(-10px);
+	transform-origin: bottom left;	
+	margin-top: -20px;
+
+	@include mobile-down() {
+		transform: rotate(0)  translateY(0);
+  	margin-top: 0;
+  }
+}
+
+.chart__txt-cap {
+	display: block;
+	height: 50px; width: 30px;
+	background: url(../img/logo-graph.png) no-repeat 0 0;	
+
+	transform: rotate(90deg) translateX(-30px);
+	transform-origin: bottom left;
+	margin-top: -20px;
+	
+	@include mobile-down() {
+		transform: rotate(0)  translateY(0);
+  	margin-top: 0;
+  }
+}
+
+.chart__time {
+	height: 10px;
+	padding: 0;
+	margin: 0;
+	padding-right: 14px;
+
+	color: #333333;
+	font-family: $chevinpro;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 13px;
+}
+
+.chart__load {
+	height: 17px;
+	padding: 0;
+	margin: 0;
+	width: $chart-load;
+
+}
+
+tr:nth-of-type(even) .chart__time span {
+	font-size: 0;
+	display: none;
+}
+
+.chart__txt {
+	display: none;
+}
+
+.chart__percent {
+	display: inline-block;
+	height: 17px;
+	font-size: 0;
+	//transition: opacity 0.3s;
+
+	&:hover {
+		opacity: 0.5;
+	}
+}
+
+.chart__tbl--rounded .chart__percent {
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.chart__tbl--percentheight .chart__load {
+	width: $chart-load;
+}
+
+.chart__load--low .chart__percent {
+	background-color: $color-low;
+}
+
+.chart__load--mid .chart__percent {
+	background-color: $color-mid;
+}
+
+.chart__load--high .chart__percent {
+	background-color: $color-high;
+}
+
+.chart__legend {
+	margin: 0 0 0 56px; padding: 0;
+	vertical-align: middle;
+	@include mobile-down() {
+		float: left;
+		margin-left: 20px;
+	}
+}
+
+.chart__legend-item {
+	display: inline-block;
+	height: 16px;
+	margin: 0 25px 0 0; padding: 0;
+	list-style-type: none;
+	background-color: transparent;
+
+	line-height: 16px;
+	font-family: $opensans;
+	font-size: 13px;
+
+	&::before {
+			content:'';
+			display: inline-block;
+			width: 15px; height: 15px;
+			vertical-align: middle;
+			border-radius: 10px;
+			margin-right: 6px;
+		}
+
+	&--low {
+		&::before {
+			background-color: $color-low;
+		}
+	}
+
+	&--mid {
+		&::before {
+			background-color: $color-mid;
+		}
+	}
+
+	&--high {
+		&::before {
+			background-color: $color-high;
+		}
+	}
+
+	@include mobile-down() {
+		display: block;
+		margin-bottom: 15px;
+		margin-right: 0;
+		height: auto;
+		width: auto;
+	}
+}

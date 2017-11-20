@@ -1,0 +1,31 @@
+.page-footer {
+	@include wrapper();
+	padding-top: 30px;
+	padding-bottom: 30px;
+	text-align: center;
+	font-size: 16px;
+}
+
+.page-footer__copy-title {
+	margin: 11px 0 0;
+	color: $accent;
+	font-family: $opensansbold;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 18px;
+	text-transform: uppercase;
+}
+
+.page-footer__copy-text {
+	font-family: $opensansbold;
+	font-weight: bold;
+	line-height: 24px;
+	text-transform: uppercase;
+}
+
+.page-footer__company {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	font-family: $opensanslight;
+	font-weight: 300;
+}

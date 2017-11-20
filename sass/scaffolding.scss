@@ -1,0 +1,124 @@
+body {
+  min-width:320px;
+  margin:0;
+  padding:0;
+  font-family:$opensans;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 30px;
+  position: relative;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: $link;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    border-bottom: 1px solid $link;
+  }
+
+  &:focus {
+    box-shadow: 0 2px 0 0;
+    outline: none;
+  }
+}
+
+abbr[data-title] {
+  text-decoration: none;
+  border-bottom: 1px dashed $link;
+  cursor: pointer;
+  position: relative;
+
+    &::after{
+      opacity: 0;
+      content: attr(data-title);
+      position: absolute;
+      display: block;
+      top: -23px; left: 50%;
+      transform: translateX(-40px);
+      padding: 5px 15px;
+      border-radius: 5px;
+
+      background: $tool;
+      color: #fff;
+      font-size: 14px;  line-height: 14px;
+      transition: opacity 0.5s; 
+    }
+
+    &::before {
+      opacity: 0;
+      content: '';      
+      position: absolute;
+      width: 0; height: 0;
+      left: 50%; top: 0;
+
+      border: 5px solid;
+      border-color: $tool transparent transparent transparent;
+
+      transition: opacity 0.5s; 
+    }
+
+    &:hover::before, &:hover::after {
+      opacity: 1;
+    }
+}
+
+.btn {
+  display: inline-block;
+  width: 235px;
+  padding:7px 0;
+  border: 1px solid white;
+  border-radius: 50px;
+
+  background-color: #fff;
+  text-align: center;
+  font-family:$opensans;
+  font-weight: 400;
+  font-size: 16px;
+
+  cursor: pointer;
+
+  &--orange {
+    color: #e84d0f;
+    border-color: #e84d0f;
+    font-size: 16px;
+    &:hover {
+      background-color: #e84d0f;
+      color: #fff;
+    }
+
+    &:focus {
+      box-shadow: 0 0 0 0;
+    }
+  }
+
+  &:hover {
+    font-weight: bold;
+    font-family: $opensansbold;
+  }
+  &:active {
+    font-weight: bold;
+    opacity: 0.7;
+  }
+}
+
+
+.visually-hidden{
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+
+  border: 0;
+
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}

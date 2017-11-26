@@ -677,9 +677,9 @@ abbr[data-title] {
   display: -ms-flexbox;
   display: flex;
   max-width: 1200px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center; }
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
 
 .slider__desc {
   max-width: 650px;
@@ -1203,3 +1203,11 @@ tr:nth-of-type(even) .chart__time span {
       margin-right: auto;
       padding-left: 10px;
       padding-right: 10px; } }
+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .slider__desc {
+      width: 60%; } }
+
+@media screen and (-ms-high-contrast: active) and (max-width: 900px), (-ms-high-contrast: none) and (max-width: 900px) {
+    .slider__desc {
+      width: 100%; } }

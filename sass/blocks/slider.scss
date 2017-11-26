@@ -34,7 +34,8 @@
 .slider__flex {
 	display: flex;
 	max-width: 1200px;
-	justify-content: center;
+	justify-content: space-between;
+
 	@include tablet-down() {
 		flex-direction: column;
 	}
@@ -44,6 +45,13 @@
 	max-width: 650px;
 	min-height: 334px;
 	font-family: $opensanslight;
+
+	@include ie11() {
+		width: 60%;
+		@include tablet-down() {
+			width: 100%;
+		}
+	}
 }
 
 .slider__header {

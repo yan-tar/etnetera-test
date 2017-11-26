@@ -61,6 +61,11 @@
 @mixin mobile-down {
   @media (max-width: 600px) { @content; }
 }
+@mixin ie11 {
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none){
+    @content;
+  } 
+}
 
 /*test purposes only*/
 @mixin outline {

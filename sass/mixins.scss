@@ -27,6 +27,7 @@
   max-width: 1300px;
   padding-left: $tv-pad-outer;
   padding-right: $tv-pad-outer;
+  margin: 0 auto;
 
   @include desktop-down {
     padding-left: $desktop-pad-outer;

@@ -556,6 +556,7 @@ abbr[data-title] {
   max-width: 1300px;
   padding-left: 50px;
   padding-right: 50px;
+  margin: 0 auto;
   padding-top: 17px;
   padding-bottom: 19px;
   display: -webkit-box;
@@ -661,9 +662,10 @@ abbr[data-title] {
 
 .slider {
   height: 454px;
-  padding: 0;
-  margin: 0;
   width: 100%;
+  max-width: 1400px;
+  padding: 0;
+  margin: 0 auto;
   position: relative; }
 
 .slider__item {
@@ -673,7 +675,11 @@ abbr[data-title] {
 .slider__flex {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex; }
+  display: flex;
+  max-width: 1200px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .slider__desc {
   max-width: 650px;
@@ -715,7 +721,9 @@ abbr[data-title] {
   z-index: 10;
   font-size: 0; }
   .slick-arrow:focus {
-    outline-color: #e84d0f; }
+    -webkit-transform: scale(1.2);
+            transform: scale(1.2);
+    outline: none; }
 
 .slick-prev {
   left: 88px;
@@ -742,7 +750,8 @@ abbr[data-title] {
   line-height: 20px;
   max-width: 1300px;
   padding-left: 50px;
-  padding-right: 50px; }
+  padding-right: 50px;
+  margin: 0 auto; }
 
 .news__text {
   margin: 0 10px; }
@@ -761,6 +770,7 @@ abbr[data-title] {
   max-width: 1300px;
   padding-left: 50px;
   padding-right: 50px;
+  margin: 0 auto;
   padding-top: 1px;
   padding-bottom: 1px; }
 
@@ -945,6 +955,7 @@ tr:nth-of-type(even) .chart__time span {
   max-width: 1300px;
   padding-left: 50px;
   padding-right: 50px;
+  margin: 0 auto;
   padding-top: 30px;
   padding-bottom: 30px;
   text-align: center;

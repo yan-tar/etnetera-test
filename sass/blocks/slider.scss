@@ -1,7 +1,8 @@
 .slider {
 	height: 454px;
-	padding: 0; margin: 0;
 	width: 100%;
+	max-width: 1400px;
+	padding: 0; margin: 0 auto;
 	position: relative;
 
 	@include mobile-down() {
@@ -12,6 +13,7 @@
 .slider__item {
 	padding: 60px ($tv-pad-outer+$tv-pad-inner);
 	background: #f6f6f6 url(../img/slider-1.png) no-repeat 0 0;
+
 
 	@include desktop-down() {
 		padding: 60px ($desktop-pad-outer+$desktop-pad-inner);
@@ -31,6 +33,8 @@
 
 .slider__flex {
 	display: flex;
+	max-width: 1200px;
+	justify-content: center;
 	@include tablet-down() {
 		flex-direction: column;
 	}
@@ -101,7 +105,8 @@
 	font-size: 0;	
 
 	&:focus {
-		outline-color: $link;
+		transform: scale(1.2);
+		outline: none;
 	}
 
 	@include mobile-down() {

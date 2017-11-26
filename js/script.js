@@ -11,4 +11,16 @@ $(document).ready(function() {
   $('.slider').slick({
   	dots: false
   });
+
+  $('.chart__percent').each(function(){
+  	$(this).after('<span class="chart__jshint">' + $(this).text().slice(1, -1) + '</span>');
+  })
+
+  $('.chart__load').on('mouseover', function(){
+  	$(this).addClass('chart__load--active');
+  });
+
+  $('.chart__load').on('mouseout', function(){
+  	$(this).removeClass('chart__load--active');
+  });
 });

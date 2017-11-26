@@ -23,7 +23,7 @@
 	border: 0;
 	border-collapse: collapse;
 	border-spacing: 0;
-	line-height: 5px; font-size: 0; 
+	line-height: 0; font-size: 0; 
 
 	transform: rotate(-90deg) translateY(-140px);
 	transform-origin: top right;
@@ -35,13 +35,17 @@
   */
   margin-bottom: -380px;
 
+  &--percentheight {
+  	margin-bottom: -380px;
+  }
+
   @include mobile-down() {
 		transform: rotate(0)  translateY(0);
   	margin-bottom: 20px;
   	float: left;
   }
-
 }
+
 .chart__tbl tr {
 	padding: 0;
 	margin: 0;
@@ -102,12 +106,14 @@
 }
 
 .chart__load {
+	position: relative;
 	height: 17px;
 	padding: 0;
 	margin: 0;
 	width: $chart-load;
 
 }
+
 
 tr:nth-of-type(even) .chart__time span {
 	font-size: 0;
@@ -122,7 +128,6 @@ tr:nth-of-type(even) .chart__time span {
 	display: inline-block;
 	height: 17px;
 	font-size: 0;
-	//transition: opacity 0.3s;
 
 	&:hover {
 		opacity: 0.5;
@@ -151,7 +156,7 @@ tr:nth-of-type(even) .chart__time span {
 }
 
 .chart__legend {
-	margin: 0 0 0 56px; padding: 0;
+	margin: 0 0 0 53px; padding: 0;
 	vertical-align: middle;
 	@include mobile-down() {
 		float: left;
@@ -204,4 +209,52 @@ tr:nth-of-type(even) .chart__time span {
 		height: auto;
 		width: auto;
 	}
+}
+
+.chart__tbl tr:last-of-type td {
+	/*for jshint*/
+	padding-bottom: 5px;
+}
+
+.chart__tbl--percentheight .chart__load {
+	/*for jshint*/
+	//margin-right: 20px;
+
+	@include mobile-down {
+		padding-right: 30px;
+	}
+}
+
+// .chart__tbl--percentheight + .chart__legend {
+// 	/*for jshint in case of padding for td.chart__load*/
+// 	margin-top: 20px;
+// 	margin-left: 73px;
+// 	@include mobile-down() {
+// 		margin-top: 0;
+// 		margin-left: 20px;
+// 	}
+// }
+
+.chart__jshint {
+	position: absolute;
+	display: none;
+  top: 0;
+  right: 0;
+	width: 2.5em;
+
+	text-align: right;
+  font-size: 12px;
+  line-height: 12px;
+  transform: rotate(90deg) translateX(1.7em);
+  transform-origin: top right;
+  z-index: 12;
+
+	@include mobile-down() {
+		line-height: 17px;
+  	transform: rotate(0deg) translateX(0);
+	}
+}
+
+.chart__load--active .chart__jshint {
+	display: block;
 }

@@ -36,7 +36,9 @@
   margin-bottom: -380px;
 
   &--percentheight {
-  	margin-bottom: -380px;
+  	/*for jshint*/
+  	transform: rotate(-90deg) translateY(-160px);
+  	margin-bottom: -360px;
   }
 
   @include mobile-down() {
@@ -218,22 +220,12 @@ tr:nth-of-type(even) .chart__time span {
 
 .chart__tbl--percentheight .chart__load {
 	/*for jshint*/
-	//margin-right: 20px;
+	padding-right: 20px;
 
 	@include mobile-down {
 		padding-right: 30px;
 	}
 }
-
-// .chart__tbl--percentheight + .chart__legend {
-// 	/*for jshint in case of padding for td.chart__load*/
-// 	margin-top: 20px;
-// 	margin-left: 73px;
-// 	@include mobile-down() {
-// 		margin-top: 0;
-// 		margin-left: 20px;
-// 	}
-// }
 
 .chart__jshint {
 	position: absolute;
